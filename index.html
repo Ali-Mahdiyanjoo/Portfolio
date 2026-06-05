@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Mahdiyanjoo | DevOps Engineer</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/main.js" defer></script>
+</head>
+<body class="font-sans antialiased text-slate-300 relative selection:bg-cyan-500 selection:text-white bg-grid">
+
+    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 font-mono text-xl font-bold text-white cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <span class="text-cyan-400">Ali-Mahdiyanjoo</span>@<span class="text-emerald-400">strasbourg</span>:~$<span class="animate-blink">_</span>
+                </div>
+                
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#about" class="hover:text-cyan-400 transition-colors duration-300 px-3 py-2 text-sm font-mono" data-i18n="nav-about">~/about</a>
+                        <a href="#skills" class="hover:text-cyan-400 transition-colors duration-300 px-3 py-2 text-sm font-mono" data-i18n="nav-skills">~/skills</a>
+                        <a href="#experience" class="hover:text-cyan-400 transition-colors duration-300 px-3 py-2 text-sm font-mono" data-i18n="nav-experience">~/experience</a>
+                        <a href="#fun" class="hover:text-cyan-400 transition-colors duration-300 px-3 py-2 text-sm font-mono" data-i18n="nav-fun">~/fun_stuff</a>
+                        <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300 px-3 py-2 text-sm font-mono" data-i18n="nav-contact">~/contact</a>
+                        
+                        <button id="lang-toggle" class="ml-4 bg-slate-800 border border-slate-700 hover:border-cyan-400 text-white px-3 py-1 rounded-full text-xs font-bold transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-earth-europe"></i> <span id="current-lang">EN</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="-mr-2 flex lg:hidden items-center gap-4">
+                    <button id="mobile-lang-toggle" class="bg-slate-800 border border-slate-700 text-white px-2 py-1 rounded text-xs font-bold">EN</button>
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:hidden hidden bg-slate-900 border-b border-slate-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-mono">
+                <a href="#about" class="hover:bg-slate-800 hover:text-cyan-400 block px-3 py-2 rounded-md text-sm" data-i18n="nav-about">~/about</a>
+                <a href="#skills" class="hover:bg-slate-800 hover:text-cyan-400 block px-3 py-2 rounded-md text-sm" data-i18n="nav-skills">~/skills</a>
+                <a href="#experience" class="hover:bg-slate-800 hover:text-cyan-400 block px-3 py-2 rounded-md text-sm" data-i18n="nav-experience">~/experience</a>
+                <a href="#fun" class="hover:bg-slate-800 hover:text-cyan-400 block px-3 py-2 rounded-md text-sm" data-i18n="nav-fun">~/fun_stuff</a>
+                <a href="#contact" class="hover:bg-slate-800 hover:text-cyan-400 block px-3 py-2 rounded-md text-sm" data-i18n="nav-contact">~/contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- HERO SECTION -->
+        <section id="home" class="min-h-[90vh] flex items-center justify-center relative px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1 z-10 reveal">
+                    <div class="font-mono text-cyan-400 mb-4 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-terminal"></i> <span data-i18n="hero-greeting">./start_session.sh</span>
+                    </div>
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                        <span data-i18n="hero-im">Hi, I'm</span> <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400 text-glow">Ali Mahdiyanjoo</span>
+                    </h1>
+                    
+                    <div class="text-xl sm:text-2xl text-slate-400 font-mono mb-8 h-8 flex">
+                        <span class="text-emerald-400 mr-2">➜</span> <span id="typewriter"></span><span class="animate-blink text-cyan-400">_</span>
+                    </div>
+
+                    <p class="text-slate-400 max-w-lg mb-10 text-lg leading-relaxed" data-i18n="hero-desc">
+                        International student at Ynov Campus Strasbourg building reliable cloud systems and automating infrastructure.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 font-mono text-sm">
+                        <a href="#contact" class="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-6 py-3 rounded font-bold transition-all shadow-[0_0_15px_rgba(34,211,238,0.3)]">
+                            ./connect.sh
+                        </a>
+                        <a href="https://github.com" target="_blank" class="glass-card text-white px-6 py-3 rounded font-medium transition-all flex items-center gap-2 hover:text-cyan-400">
+                            <i class="fa-brands fa-github text-lg"></i> cat github_profile
+                        </a>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2 flex justify-center lg:justify-end relative z-10 reveal">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-emerald-500/10 rounded-full blur-3xl w-72 h-72 lg:w-96 lg:h-96 -z-10 animate-pulse"></div>
+                    <div class="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full p-1 bg-gradient-to-br from-cyan-400/50 to-emerald-500/50 animate-float">
+                        <div class="w-full h-full rounded-full overflow-hidden bg-slate-900 border-4 border-[#0b1120]">
+                            <img src="assets/Ali.PNG" alt="Ali" class="w-full h-full object-cover object-top filter contrast-110">
+                        </div>
+                        <div class="absolute top-4 -left-4 bg-slate-900 text-cyan-400 p-3 rounded-lg border border-slate-700 font-bold text-2xl flex items-center justify-center w-12 h-12 shadow-lg">
+                            <i class="fa-brands fa-docker"></i>
+                        </div>
+                        <div class="absolute bottom-10 -right-4 bg-slate-900 text-blue-500 p-3 rounded-lg border border-slate-700 flex items-center justify-center w-12 h-12 shadow-lg">
+                            <svg viewBox="0 0 128 128" width="20" height="20"><path fill="#326CE5" d="M64 4.545L111.458 32v54.91L64 123.454 16.542 86.91V32z"/><path fill="#fff" d="M64 17.518l-37.143 21.46v42.92L64 103.357l37.143-21.46v-42.92L64 17.518zM64 85.93l-22.072-12.75v-25.5L64 34.93l22.072 12.75v25.5L64 85.93zM64 73.18l-11.036-6.375v-12.75L64 47.68l11.036 6.375v12.75L64 73.18z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-20 relative border-t border-slate-800/50 bg-slate-900/30">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 reveal">
+                    <p class="font-mono text-cyan-400 text-xs tracking-widest mb-2 uppercase" data-i18n="sec-num-01">// 01. ABOUT</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white font-mono cmd-underline" data-i18n="h-whoami">whoami</h2>
+                </div>
+
+                <div class="glass-card rounded-lg p-6 md:p-8 reveal border-l-4 border-l-cyan-400">
+                    <div class="font-mono text-sm text-slate-400 space-y-4">
+                        <p><span class="text-emerald-400">Ali-Mahdiyanjoo@strasbourg:~$</span> cat description.txt</p>
+                        <p class="text-slate-300 leading-relaxed" data-i18n="about-p1">
+                            Hello! I'm Ali, an international student currently pursuing my Bachelor 3 in IT - Infrastructure & Network at Ynov Campus Strasbourg. My journey into tech started with a deep curiosity about how large-scale systems stay online, leading me down the path of DevOps and System Administration.
+                        </p>
+                        <p class="text-slate-300 leading-relaxed" data-i18n="about-p2">
+                            I specialize in building reliable cloud environments, automating CI/CD pipelines, and ensuring infrastructure as code (IaC) is secure and scalable. Having worked in various roles in Iran and now transitioning into the French tech ecosystem, I bring a diverse perspective to engineering challenges.
+                        </p>
+                        <div class="mt-6 border-t border-slate-700/50 pt-4 flex flex-wrap items-center gap-2">
+                            <span class="text-cyan-400">Languages:</span>
+                            <span class="inline-flex items-center text-white bg-slate-800 px-2 py-1 rounded">🇫🇷 Français</span>
+                            <span class="inline-flex items-center text-white bg-slate-800 px-2 py-1 rounded">🇬🇧 English</span>
+                            <span class="inline-flex items-center text-white bg-slate-800 px-2 py-1 rounded">
+                                <img src="assets/iran-flag.png" alt="IR" class="w-4 h-4 mr-1 object-cover rounded-sm"> Persian
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="py-20 relative border-t border-slate-800/50">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 reveal">
+                    <p class="font-mono text-cyan-400 text-xs tracking-widest mb-2 uppercase" data-i18n="sec-num-02">// 02. SKILLS</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white font-mono cmd-underline" id="header-skills" data-i18n="h-skills">ls -la skills/</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+                    <div>
+                        <h3 class="text-emerald-400 font-mono text-sm mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-box-open"></i> <span data-i18n="cat-containers">Containers & Orchestration</span>
+                        </h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 font-mono text-sm text-center">
+                            <div class="skill-tag rounded p-2 text-slate-300">Docker</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">Kubernetes</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">OpenShift</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">ArgoCD</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-emerald-400 font-mono text-sm mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-cloud"></i> <span data-i18n="cat-cloud">Cloud & IaC</span>
+                        </h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 font-mono text-sm text-center">
+                            <div class="skill-tag rounded p-2 text-slate-300">AWS</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">Azure</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">GCP</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">Terraform</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">Ansible</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">VMware</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-emerald-400 font-mono text-sm mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-gear"></i> <span data-i18n="cat-cicd">CI/CD & Scripting</span>
+                        </h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 font-mono text-sm text-center">
+                            <div class="skill-tag rounded p-2 text-slate-300">GitLab CI</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">GH Actions</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">Jenkins</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">Git</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">Bash</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">Python</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-emerald-400 font-mono text-sm mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-chart-line"></i> <span data-i18n="cat-observability">Observability & Data</span>
+                        </h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 font-mono text-sm text-center">
+                            <div class="skill-tag rounded p-2 text-slate-300">Prometheus</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">Grafana</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">ELK Stack</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">PostgreSQL</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">MongoDB</div>
+                            <div class="skill-tag rounded p-2 text-slate-300">RabbitMQ</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 reveal">
+                    <h3 class="text-cyan-400 font-mono text-sm mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-medal text-orange-400"></i> <span data-i18n="cat-certs">Certifications</span>
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="glass-card p-5 rounded">
+                            <i class="fa-brands fa-aws text-2xl mb-3 text-white"></i>
+                            <h4 class="font-bold text-white mb-1">AWS Certified Solutions Architect</h4>
+                            <p class="text-slate-500 font-mono text-xs">Amazon Web Services</p>
+                        </div>
+                        <div class="glass-card p-5 rounded">
+                            <i class="fa-solid fa-dharmachakra text-2xl mb-3 text-white"></i>
+                            <h4 class="font-bold text-white mb-1">CKA — Certified Kubernetes Admin</h4>
+                            <p class="text-slate-500 font-mono text-xs">CNCF / Linux Foundation</p>
+                        </div>
+                        <div class="glass-card p-5 rounded">
+                            <i class="fa-solid fa-cubes text-2xl mb-3 text-purple-400"></i>
+                            <h4 class="font-bold text-white mb-1">Terraform Associate</h4>
+                            <p class="text-slate-500 font-mono text-xs">HashiCorp</p>
+                        </div>
+                        <div class="glass-card p-5 rounded">
+                            <i class="fa-brands fa-linux text-2xl mb-3 text-white"></i>
+                            <h4 class="font-bold text-white mb-1">LPIC-1 & LPIC-2</h4>
+                            <p class="text-slate-500 font-mono text-xs">Linux Professional Institute</p>
+                        </div>
+                        <div class="glass-card p-5 rounded md:col-span-2 lg:col-span-1">
+                            <i class="fa-solid fa-globe text-2xl mb-3 text-blue-400"></i>
+                            <h4 class="font-bold text-white mb-1">CCNP ENCOR (350-401)</h4>
+                            <p class="text-slate-500 font-mono text-xs">Cisco</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="py-20 relative border-t border-slate-800/50 bg-slate-900/30">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 reveal">
+                    <p class="font-mono text-cyan-400 text-xs tracking-widest mb-2 uppercase" data-i18n="sec-num-03">// 03. EXPERIENCE</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white font-mono cmd-underline" data-i18n="h-exp">cat /var/log/experience.log</h2>
+                </div>
+
+                <div class="space-y-6 reveal">
+                    <div class="glass-card p-6 rounded-lg border-l-2 border-l-emerald-400">
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Ingénieur DevOps</h3>
+                                <p class="font-mono text-cyan-400 text-sm mt-1">ESN Nancy <span class="text-slate-500">| Nancy, France</span></p>
+                            </div>
+                            <span class="font-mono text-sm text-slate-500 mt-2 sm:mt-0" data-i18n="date-esn">08/2025 - Present</span>
+                        </div>
+                        <ul class="list-none text-slate-300 space-y-2 text-sm">
+                            <li class="flex items-start"><span class="text-emerald-400 mr-2">›</span> <span data-i18n="exp1-l1">Migration of legacy WordPress to modern architecture (Django, FastAPI, PostgreSQL, Docker).</span></li>
+                            <li class="flex items-start"><span class="text-emerald-400 mr-2">›</span> <span data-i18n="exp1-l2">AWS infrastructure setup with Terraform, CI/CD pipelines (GitHub Actions), and observability (Prometheus, Grafana, ELK).</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-lg border-l-2 border-l-slate-600">
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Ingénieur DevOps</h3>
+                                <p class="font-mono text-cyan-400 text-sm mt-1">Baar Baanet <span class="text-slate-500">| Téhéran, Iran</span></p>
+                            </div>
+                            <span class="font-mono text-sm text-slate-500">06/2024 - 12/2024</span>
+                        </div>
+                        <ul class="list-none text-slate-400 space-y-2 text-sm">
+                            <li class="flex items-start"><span class="text-slate-500 mr-2">›</span> <span data-i18n="exp2-l1">Migrated Docker Compose environments to Kubernetes to improve scalability and resilience.</span></li>
+                            <li class="flex items-start"><span class="text-slate-500 mr-2">›</span> <span data-i18n="exp2-l2">CI/CD automation and AWS deployment via Terraform, Ansible, and GitLab CI.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-lg border-l-2 border-l-slate-600">
+                         <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Ingénieur DevOps</h3>
+                                <p class="font-mono text-cyan-400 text-sm mt-1">MTYN Ltd <span class="text-slate-500">| Téhéran, Iran</span></p>
+                            </div>
+                            <span class="font-mono text-sm text-slate-500">09/2023 - 06/2024</span>
+                        </div>
+                        <ul class="list-none text-slate-400 space-y-2 text-sm">
+                            <li class="flex items-start"><span class="text-slate-500 mr-2">›</span> <span data-i18n="exp3-l1">Administered Kubernetes on AWS with production monitoring.</span></li>
+                            <li class="flex items-start"><span class="text-slate-500 mr-2">›</span> <span data-i18n="exp3-l2">Automated deployments and optimized Cloud resources on AWS and GCP.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FUN STUFF SECTION -->
+        <section id="fun" class="py-20 relative border-t border-slate-800/50">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 reveal">
+                    <p class="font-mono text-cyan-400 text-xs tracking-widest mb-2 uppercase" data-i18n="sec-num-04">// 04. FUN STUFF</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white font-mono cmd-underline" data-i18n="h-fun">sudo apt install fun</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal text-center">
+                    <div class="glass-card p-8 rounded-lg flex flex-col items-center justify-center">
+                        <div class="text-4xl mb-4">🌍</div>
+                        <h3 class="text-white font-bold mb-2" data-i18n="fun1-title">International Student</h3>
+                        <p class="text-slate-400 text-sm font-mono" data-i18n="fun1-desc">From Tehran to Nancy to Strasbourg — navigating 3 languages, 2 cultures, 1 baguette at a time 🥖</p>
+                    </div>
+                    
+                    <div class="glass-card p-8 rounded-lg flex flex-col items-center justify-center">
+                        <div class="text-4xl mb-4">🏆</div>
+                        <h3 class="text-white font-bold mb-2" data-i18n="fun2-title">CS50x Champion</h3>
+                        <p class="text-slate-400 text-sm font-mono" data-i18n="fun2-desc">First place at Harvard's CS50x competition with Team Datapanel. Turns out staying awake for 36h straight does pay off.</p>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-lg flex flex-col items-center justify-center">
+                        <div class="text-4xl mb-4">🤝</div>
+                        <h3 class="text-white font-bold mb-2" data-i18n="fun3-title">Erasmus+ Volunteer</h3>
+                        <p class="text-slate-400 text-sm font-mono" data-i18n="fun3-desc">Helping other international students integrate and feel at home in France. Been there, done that.</p>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-lg flex flex-col items-center justify-center">
+                        <div class="text-4xl mb-4 text-yellow-400"><i class="fa-solid fa-bolt"></i></div>
+                        <h3 class="text-white font-bold mb-2" data-i18n="fun4-title">Automation Addict</h3>
+                        <p class="text-slate-400 text-sm font-mono" data-i18n="fun4-desc">If I do something twice, I automate it. If I automate it, I monitor it. If it breaks, I fix the monitoring first.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-20 relative border-t border-slate-800/50 bg-slate-900/30 mb-10">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 reveal">
+                    <p class="font-mono text-cyan-400 text-xs tracking-widest mb-2 uppercase" data-i18n="sec-num-05">// 05. CONTACT</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white font-mono cmd-underline" id="header-contact" data-i18n="h-contact">./connect.sh</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 reveal">
+                    <div class="space-y-6">
+                        <p class="text-slate-400 font-mono leading-relaxed" data-i18n="contact-desc">
+                            Looking for an alternance partner? Let's build something great together. I respond to all messages — usually faster than a CI/CD pipeline.
+                        </p>
+
+                        <div class="space-y-4 font-mono text-sm">
+                            <a href="mailto:mahdiyanjooali@gmail.com" class="block glass-card p-4 rounded hover:border-cyan-400 flex items-center group">
+                                <div class="w-10 text-cyan-400 group-hover:text-white transition-colors"><i class="fa-regular fa-envelope text-xl"></i></div>
+                                <div>
+                                    <div class="text-xs text-slate-500 mb-1">EMAIL</div>
+                                    <div class="text-white">mahdiyanjooali@gmail.com</div>
+                                </div>
+                            </a>
+                            <a href="https://www.linkedin.com/in/ali-mahdiyanjoo" target="_blank" class="block glass-card p-4 rounded hover:border-cyan-400 flex items-center group">
+                                <div class="w-10 text-[#0a66c2] group-hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></div>
+                                <div>
+                                    <div class="text-xs text-slate-500 mb-1">LINKEDIN</div>
+                                    <div class="text-white">linkedin.com/in/ali-mahdiyanjoo</div>
+                                </div>
+                            </a>
+                            <a href="https://github.com/Ali-Mahdiyanjoo" target="_blank" class="block glass-card p-4 rounded hover:border-cyan-400 flex items-center group">
+                                <div class="w-10 text-[#0a66c2] group-hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></div>
+                                <div>
+                                    <div class="text-xs text-slate-500 mb-1">Github</div>
+                                    <div class="text-white">github.com/Ali-Mahdiyanjoo</div>
+                                </div>
+                            </a>
+                            <a href="tel:+33699848528" class="block glass-card p-4 rounded hover:border-cyan-400 flex items-center group">
+                                <div class="w-10 text-emerald-400 group-hover:text-white transition-colors"><i class="fa-solid fa-phone text-xl"></i></div>
+                                <div>
+                                    <div class="text-xs text-slate-500 mb-1">PHONE</div>
+                                    <div class="text-white">+33 6 99 84 85 28</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 sm:p-8 rounded-lg h-full flex flex-col justify-between">
+                        <div>
+                            <p class="font-mono text-cyan-400 text-sm mb-4" data-i18n="cv-header">// DOWNLOAD CV</p>
+                            <p class="text-slate-400 font-mono text-sm mb-6" data-i18n="cv-desc">
+                                My resume is available in English and French. Same person, different words.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <a href="assets/CV_Ali_Mahdiyanjoo_EN.pdf" download="CV_Ali_Mahdiyanjoo_EN.pdf" class="flex items-center gap-4 border border-slate-700 p-3 rounded hover:border-cyan-400 transition-colors group">
+                                    <div class="text-2xl">🇬🇧</div>
+                                    <div class="font-mono">
+                                        <div class="text-xs text-slate-500" data-i18n="cv-en-label">English</div>
+                                        <div class="text-white text-sm group-hover:text-cyan-400">CV_Ali_Mahdiyanjoo_EN.pdf</div>
+                                    </div>
+                                </a>
+                                <a href="assets/CV_Ali_Mahdiyanjoo_FR.pdf" download="CV_Ali_Mahdiyanjoo_FR.pdf" class="flex items-center gap-4 border border-slate-700 p-3 rounded hover:border-cyan-400 transition-colors group">
+                                    <div class="text-2xl">🇫🇷</div>
+                                    <div class="font-mono">
+                                        <div class="text-xs text-slate-500" data-i18n="cv-fr-label">Français</div>
+                                        <div class="text-white text-sm group-hover:text-cyan-400">CV_Ali_Mahdiyanjoo_FR.pdf</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="font-mono text-sm mt-8 pt-6 border-t border-slate-800">
+                            <span class="text-cyan-400">$ ping Ali-Mahdiyanjoo@strasbourg</span><br>
+                            <span class="text-slate-400">PONG — <span class="text-emerald-400 animate-pulse">online and responding</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-6 text-center text-slate-500 font-mono text-xs border-t border-slate-800 bg-[#0b1120]">
+        <p>Built by Ali Mahdiyanjoo | echo "DevOps Rules"</p>
+    </footer>
+</body>
+</html>
